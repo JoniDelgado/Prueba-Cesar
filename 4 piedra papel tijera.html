@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Hacer un juego de piedra papel o tijeras
+
+    
+        do{
+            jugador = +prompt("Elige 1 = piedra, 2 = papel, 3 = tijera");
+        }
+        while((jugador < 1 || jugador > 3) || isNaN(jugador));
+
+        let maquina = Math.floor(Math.random()*(3-1)+1);
+        let arrOptions= ["Piedra", "Papel", "Tijeras"];
+
+
+        if(jugador == 1 && maquina == 3 || jugador == 2 && maquina == 1 || jugador == 3 && maquina == 2){
+            alert(`Elegiste ${arrOptions[jugador - 1]}
+            La maquina ha elegido ${arrOptions[maquina - 1]} 
+            Has ganado la partida`);
+        }else if(jugador == maquina){
+            alert(`Elegiste ${arrOptions[jugador - 1]}
+            La maquina ha elegido ${arrOptions[maquina - 1]}
+            Es un empate`);
+        }else{
+            alert(`Elegiste ${arrOptions[jugador - 1]}
+            La maquina ha elegido ${arrOptions[maquina - 1]}
+            Haz perdido la partida`);
+        }
+
+
+
+    </script>
+</body>
+</html>

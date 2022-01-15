@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let chances;
+        let number;
+        let randomNumber;
+        startGame();
+        
+        function startGame(params) {
+            chances = 3;
+            randomNumber = Math.floor(Math.random()*(10-1)+1);
+            console.log(randomNumber);
+            chooseNumber();
+        }
+        
+        function chooseNumber() {
+            do {
+                number = +prompt("Elige un numero del 1 al 10");
+            }while ((number < 1 || number > 10) || isNaN(number)); 
+            validate(number, randomNumber);
+        }
+        
+        
+        function validate(num, numran) {
+            if(num == numran){
+                alert("Haz ganado!!!");
+                startGame();
+            }else{
+                chances--;
+                alert(`te quedan ${chances} oportunidades`);
+                if(chances == 0) {
+                    alert("HAZ PERDIDO LA PARTIDA");
+                    return;
+                }
+                chooseNumber();
+            }
+        }
+    
+        
+
+    </script>
+</body>
+</html>

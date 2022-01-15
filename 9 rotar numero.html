@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 10) Dado un numero ir rotandolo hasta volver a su numero original
+        123456
+        234561
+        345612 */
+
+        let number = prompt("Escriba un numero");
+        let arrNumber = number.split("");
+
+        arrNumber.forEach((e, ind, arr) => {
+            arr.push(arrNumber[0]);
+            arr.shift();
+            console.log(arr.join(" - "));
+        });
+
+    </script>
+</body>
+</html>

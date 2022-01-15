@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Realizar un programa y chequear si una palabra es un isograma
+
+        let palabra = prompt("Escribe una palabra para saber si es un isograma");
+        let arr = palabra.split("").sort();
+        let isIsograma = true;
+
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i + 1] == arr[i]) {isIsograma = false};    
+        }
+
+        if(isIsograma == true){
+            alert("Esta palabra es un isograma");
+        }else{
+            alert("Esta palabra no es un isograma");
+        }
+
+    </script>
+</body>
+</html>

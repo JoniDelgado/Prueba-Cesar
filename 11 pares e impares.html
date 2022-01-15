@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //[1,2,3,45,6,7,8,9,10] -> Imprimir Pares e Impares
+
+        let arr = [1,2,3,45,6,7,8,9,10,43,15,12,546,0,188];
+        let pares = [];
+        let impares = [];
+
+        arr.forEach(e => {
+            if(e % 2 == 0){
+                pares.push(e);
+            }else{
+                impares.push(e);
+            }
+        });
+
+        alert(`Los numeros elegidos son: ${arr}
+Los pares son: ${pares}
+Los impares son: ${impares}`);
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // Programa que al ingresar dos numeros muestre el mayor
+        
+        let numbers = [];
+        
+        while(numbers.length < 2){
+          numbers.push(+prompt("Elije un numero"));
+        }
+        if(numbers[0]<numbers[1]){
+          alert(`El mayor numero ingresado es el: ${numbers[1]}`);
+        }else {
+          alert(`El mayor numero ingresado es el: ${numbers[0]}`);
+        }
+
+    </script>
+</body>
+</html>

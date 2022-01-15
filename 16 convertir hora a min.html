@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Convertir dado una hora a minutos y/o segundos
+        
+        let hora = +prompt("Indique una hora y la convertiremos a min y seg");   
+        
+        do{
+            alert("No hay horas negativas");
+            hora = +prompt("Indique una hora y la convertiremos a min y seg");
+        }while(hora < 0);    
+
+        let min = hora * 60;
+        let seg = min * 60;
+
+        alert(`${hora} hora/s, tiene ${min} minutos y ${seg} segundos`);
+    
+
+
+
+    </script>
+</body>
+</html>

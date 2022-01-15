@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="celcius">
+        <label> Celcius
+            <input class="celInput" type="number" placeholder="Grados Celcius" name="celcius">
+        </label>
+        <button class="celButton">Convertir</button>
+    </div> <br>
+    <div class="farenheit">
+        <label> Farenheit
+            <input class="farInput" type="number" placeholder="Grados Farenheit" name="farenheit">
+        </label>
+        <button class="farButton">Convertir</button>
+    </div>  
+    
+    <script>
+
+        let celBoton = document.querySelector(".celButton");
+        let farBoton = document.querySelector(".farButton");
+        let farInput = document.querySelector(".farInput");
+        let celInput = document.querySelector(".celInput");
+        
+        celBoton.addEventListener('click', () => converToFarenheit());
+        farBoton.addEventListener('click', () => converToCelcius());
+        
+        function converToFarenheit(){
+            let celVal = celInput.value;
+            farInput.value = (celVal * 1.8) + 32;
+        }
+
+        function converToCelcius(){
+            let farVal = farInput.value;
+            let num = celInput.value = (farVal - 32) / 1.8;
+        }
+
+    </script>
+</body>
+</html>

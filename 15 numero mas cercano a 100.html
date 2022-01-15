@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let num1 = +prompt("Ingresa un primer numero");
+        let num2 = +prompt("Ingresa un segundo numero");
+        let showNum1 = num1;
+        let showNum2 = num2;
+        let counter1 = 0;
+        let counter2 = 0;
+
+        if(num1 <= 100){
+            while(num1 < 100){
+                num1++;
+                counter1++;
+            }
+        }else if(num1 >= 100){
+            while(num1 > 100){
+                num1--;
+                counter1++;
+            }
+        }
+
+        if(num2 <= 100){
+            while(num2 < 100){
+                num2++;
+                counter2++;
+            }
+        }else if(num2 >= 100){
+            while(num2 > 100){
+                num2--;
+                counter2++;
+            }
+        }
+        
+        if(counter1 > counter2){
+            alert(`El segundo numero (${showNum2}), esta mas cerca de 100 que el primero (${showNum1})`);
+        }else if(counter1 == counter2){
+            alert("Ambos numeros estan a la misma distancia");
+        }else{
+            alert(`El primer numero (${showNum1}), esta mas cerca de 100 que el segundo (${showNum2})`);
+        }
+
+
+    </script>
+</body>
+</html>
