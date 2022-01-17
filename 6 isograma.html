@@ -11,7 +11,7 @@
 
         // Realizar un programa y chequear si una palabra es un isograma
 
-        let palabra = prompt("Escribe una palabra para saber si es un isograma");
+        /* let palabra = prompt("Escribe una palabra para saber si es un isograma");
         let arr = palabra.split("").sort();
         let isIsograma = true;
 
@@ -19,11 +19,31 @@
             if(arr[i + 1] == arr[i]) {isIsograma = false};    
         }
 
-        if(isIsograma == true){
+        if(isIsograma){
             alert("Esta palabra es un isograma");
         }else{
             alert("Esta palabra no es un isograma");
+        } */
+
+        let palabra = "conocer";
+        let arrPalabra = palabra.split("");
+        let letrasRepetidas = [];
+
+        for (let i = 0; i < arrPalabra.length; i++) {
+            for (let j = i + 1; j < arrPalabra.length; j++) {
+                 if(arrPalabra[i] == arrPalabra[j]){
+                    letrasRepetidas.push(arrPalabra[j]);
+                }     
+            }         
         }
+
+        if(letrasRepetidas.length == 0) {
+            alert("Es un isograma, no hay letras repetidas"); 
+        } else {
+            alert("No es un isograma, se repite la/s letra/s (" + letrasRepetidas + ")");
+        }
+        
+            
 
     </script>
 </body>
