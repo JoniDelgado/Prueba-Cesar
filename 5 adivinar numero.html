@@ -9,21 +9,20 @@
 <body>
     <script>
 
-        let chances;
+        /* let chances;
         let number;
         let randomNumber;
         startGame();
         
-        function startGame(params) {
+        function startGame() {
             chances = 3;
             randomNumber = Math.floor(Math.random()*(10-1)+1);
-            console.log(randomNumber);
             chooseNumber();
         }
         
         function chooseNumber() {
             do {
-                number = +prompt("Elige un numero del 1 al 10");
+                number = Number(prompt("Elige un numero del 1 al 10"));
             }while ((number < 1 || number > 10) || isNaN(number)); 
             validate(number, randomNumber);
         }
@@ -43,7 +42,47 @@
                 chooseNumber();
             }
         }
-    
+     */
+
+        let chances;
+        let number;
+        let randomNumber;
+        startGame();
+        
+        function startGame() {
+            chances = 3;
+            randomNumber = Math.floor(Math.random()*(10-1)+1);
+            chooseNumber();
+        }
+        
+        function chooseNumber() {
+            number = Number(prompt("Elige un numero del 1 al 10"));
+            if((number < 1 || number > 10) || isNaN(number)){
+                chooseNumber();
+            } 
+
+            validate(number, randomNumber);
+        }
+        
+        
+        function validate(num, numran) {
+            if(num == numran){
+                alert("Haz ganado!!!");
+                startGame();
+            }
+            substChances(chances);
+            chooseNumber();        
+        }
+        
+        function substChances(val){
+            val--;
+            alert(`te quedan ${val} oportunidades`);
+            if(val == 0) {
+                alert("HAZ PERDIDO LA PARTIDA");
+                startGame();
+            }
+            chances = val;
+        }
         
 
     </script>

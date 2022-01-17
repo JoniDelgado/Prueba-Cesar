@@ -12,16 +12,26 @@
     <script>
         // Programa que al ingresar dos numeros muestre el mayor
         
-        let numbers = [];
+        /* let numbers = [];
         
         while(numbers.length < 2){
-          numbers.push(+prompt("Elije un numero"));
+          numbers.push(Number(prompt("Elije un numero")));
         }
         if(numbers[0]<numbers[1]){
           alert(`El mayor numero ingresado es el: ${numbers[1]}`);
         }else {
           alert(`El mayor numero ingresado es el: ${numbers[0]}`);
+        } */
+
+        let numbers = [];
+        
+        while(numbers.length < 2){
+          numbers.push(Number(prompt("Elije un numero")));
         }
+
+        let max = Math.max(numbers[0], numbers[1]);
+
+        alert(`El mayor numero ingresado es el: ${max}`);
 
     </script>
 </body>
