@@ -29,7 +29,7 @@
           numbers.push(Number(prompt("Elije un numero")));
         }
 
-        const max = Math.max(numbers[0], numbers[1]);
+        const max = Math.max(...numbers);
 
         alert(`El mayor numero ingresado es el: ${max}`);
 
