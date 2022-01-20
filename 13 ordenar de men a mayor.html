@@ -11,13 +11,31 @@
     <script>
 
         //ordenar de menor a mayor [5,2,22,1,99,244,21,4]
+        //let arrOrdenado = arrNum.sort((a, b) => a - b).reverse();
+        //console.log(arrOrdenado);
 
-        let arrNum = [5,2,22,1,99,244,21,4];
 
-        let arrOrdenado = arrNum.sort((a, b) => a - b).reverse();
 
-        console.log(arrOrdenado);
+        let num = [5,2,22,1,99,244,21,4];
+        const numLength = num.length;
+        let sortNumbers = [];
+        let mayor = 0;
+        let indice;
+         
+        
+        for (let j = 0; j < numLength; j++) {       
+            for (let i = 0; i < numLength; i++) {
+                if(num[i] > mayor){
+                    mayor = num[i];
+                    indice = i;
+                }           
+            }
+            sortNumbers.push(mayor);
+            num.splice(indice,1);
+            mayor = 0;
+        }
 
+        alert(sortNumbers);
 
 
     </script>

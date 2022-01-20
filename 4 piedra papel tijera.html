@@ -12,7 +12,7 @@
         // Hacer un juego de piedra papel o tijeras
 
     
-        do{
+        /* do{
             jugador = +prompt("Elige 1 = piedra, 2 = papel, 3 = tijera");
         }
         while((jugador < 1 || jugador > 3) || isNaN(jugador));
@@ -33,9 +33,46 @@
             alert(`Elegiste ${arrOptions[jugador - 1]}
             La maquina ha elegido ${arrOptions[maquina - 1]}
             Haz perdido la partida`);
+        } */
+
+        let playerOne;
+        let playerTwo;
+        
+        
+        function choosePlayerOne(){
+            playerOne = prompt("Jugador uno, elige piedra, papel o tijeras.").trim().toLocaleLowerCase();
+            if(playerOne !== "piedra" && playerOne !== "papel" && playerOne !== "tijeras"){
+                alert("solo puedes elegir piedra, papel o tijeras");
+                choosePlayerOne();
+            }
+            return playerOne;
+        } 
+        
+        function choosePlayerTwo(){
+            playerTwo = prompt("Jugador dos, elige piedra, papel o tijeras.").trim().toLocaleLowerCase();
+            if(playerTwo !== "piedra" && playerTwo !== "papel" && playerTwo !== "tijeras"){
+                alert("solo puedes elegir piedra, papel o tijeras");
+                choosePlayerOne();
+            }
+            return playerTwo;
+        } 
+        
+        function winnerCheck(pOne, pTwo){
+            if(pOne === "piedra" && pTwo === "tijeras" ||
+            pOne === "papel" && pTwo === "piedra" ||
+            pOne === "tijeras" && pTwo === "papel"){    
+                alert("Jugador uno ha ganado");
+            } else if(pOne === pTwo) {
+                alert("Es un empate");
+            }else {
+                alert("jugador dos ha ganado");
+            }
         }
-
-
+        
+        choosePlayerOne();
+        choosePlayerTwo();
+        winnerCheck(playerOne, playerTwo);
+        
 
     </script>
 </body>

@@ -10,13 +10,13 @@
     <script>
         
         alert("Vamos a chequear si un triangulo es isoseles, equilatero o escaleno");
-        let lado1 = +prompt("Elija la medida del primer lado:");
-        let lado2 = +prompt("Elija la medida del segundo lado");
-        let lado3 = +prompt("Elija la medida del tercer lado");
+        const lado1 = Number(prompt("Elija la medida del primer lado:"));
+        const lado2 = Number(prompt("Elija la medida del segundo lado"));
+        const lado3 = Number(prompt("Elija la medida del tercer lado"));
 
-        if(lado1 == lado2 && lado1 == lado3){
+        if(lado1 === lado2 && lado1 === lado3){
             alert("Es un triangulo equilatero (todos sus lados son iguales)");
-        }else if((lado1 == lado2 && lado1 != lado3) || (lado2 == lado3 && lado2 != lado1) || (lado1 == lado3 && lado1 != lado2)){
+        }else if((lado1 === lado2 && lado1 !== lado3) || (lado2 === lado3 && lado2 !== lado1) || (lado1 === lado3 && lado1 !== lado2)){
             alert("Es un triangulo isoseles (Solo dos de sus lados son iguales)");
         }else{
             alert("Es un triangulo escaleno (todos sus lados son desiguales)");

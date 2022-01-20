@@ -11,17 +11,18 @@
 
         // Saber si es un palindromo
 
-        let str = prompt("Introduzca una palabra, frase o numero");
-        let strSinEspacios = str.split(" ").join("");
-        let strAlReves = strSinEspacios.split("").reverse().join("");
+        const str = prompt("Introduzca una palabra, frase o numero");
+        const strSinEspacios = str.split(" ").join("");
+        const strAlReves = strSinEspacios.split("").reverse().join("");
         
-        if(strSinEspacios == strAlReves){
-            alert("Es un palindromo");
-        }else{
-            alert("No es un palindromo");
+        function isPalindrome(text, textReverse){
+            if(text === textReverse){
+                return alert("Es un palindromo");
+            }
+            return alert("No es un palindromo");
         }
-        console.log(strSinEspacios, strAlReves);
 
+        isPalindrome(strSinEspacios, strAlReves);
 
     </script>
 </body>

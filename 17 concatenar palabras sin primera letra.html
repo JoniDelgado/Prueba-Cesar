@@ -9,11 +9,29 @@
 <body>
     <script>
 
-        let arrPalabras = [];
-        let str1 = prompt("escribe una palabra");
-        let str2 = prompt("escribe otra palabra");
+        /* const text = "ejemplo1 y ejemplo2 y tambien ejemplo3";
+        const filter = /\w{2,}/gi;
+        
+        const newText = text.split(" ").map( e => {
+            if(filter.test(e)){
+                return e.substr(1);
+            }
+            return e;
+        }).join("");
 
-        alert(str1.substr(1) + str2.substr(1));
+        alert(newText);
+ */
+
+        const text = "ejemplo1 y ejemplo2 y tambien ejemplo3";
+        
+        const newText = text.split(" ").map( e => {
+            if(e.length > 1){
+                return e.substr(1);
+            }
+            return e;
+        }).join("");
+
+        alert(newText);
 
 
 

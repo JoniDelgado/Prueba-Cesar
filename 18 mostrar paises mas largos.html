@@ -9,12 +9,20 @@
 <body>
     <script>
 
-        let arrPaises = ["argentina", "italia", "francia", "noruega", "rusia", "estados unidos", "china", "peru", "colombia"];
+        const country = ["argentina", "italia", "francia", "noruega", "rusia", "estados unidos", "china", "peru", "colombia"];      
         
-        arrPaises.sort((a,b) => a.length- b.length);
-        console.log(arrPaises);
+        let biggestCountry = 0
+        let counter = 0;
+        
 
+        for (let i = 0; i < country.length; i++) {
+            if(country[i].length > counter){
+                counter = country[i].length;
+                biggestCountry = country[i];
+            }
+        }
 
+        alert("El pais con mas letras es: " +biggestCountry);
     </script>
 </body>
 </html>

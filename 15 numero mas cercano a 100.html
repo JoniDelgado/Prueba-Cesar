@@ -9,12 +9,12 @@
 <body>
     <script>
 
-        let num1 = +prompt("Ingresa un primer numero");
-        let num2 = +prompt("Ingresa un segundo numero");
-        let showNum1 = num1;
-        let showNum2 = num2;
-        let counter1 = 0;
-        let counter2 = 0;
+        /* const num1 = +prompt("Ingresa un primer numero");
+        const num2 = +prompt("Ingresa un segundo numero");
+        const showNum1 = num1;
+        const showNum2 = num2;
+        const counter1 = 0;
+        const counter2 = 0;
 
         if(num1 <= 100){
             while(num1 < 100){
@@ -46,7 +46,23 @@
             alert("Ambos numeros estan a la misma distancia");
         }else{
             alert(`El primer numero (${showNum1}), esta mas cerca de 100 que el segundo (${showNum2})`);
+        } */
+
+
+        const num1 = Number(prompt("Ingresa un primer numero"));
+        const num2 = Number(prompt("Ingresa un segundo numero"));
+        const GOAL = 100;
+        const difNum1 = Math.abs(num1 -goal);
+        const difNum2 = Math.abs(num2 - goal);
+
+        if(difNum1 < difNum2){
+            alert("El numero mas cercano es: " + num1);
+        } else if(difNum1 == difNum2){
+            alert("Ambos numero estan a la misma distancia");
+        }else {
+            alert("El numero mas cercano es: " + num2);
         }
+
 
 
     </script>

@@ -11,15 +11,15 @@
 
         //Convertir dado una hora a minutos y/o segundos
         
-        let hora = +prompt("Indique una hora y la convertiremos a min y seg");   
+        let hora = Number(prompt("Indique una hora y la convertiremos a min y seg"));   
         
-        do{
+        while(hora < 0){
             alert("No hay horas negativas");
             hora = +prompt("Indique una hora y la convertiremos a min y seg");
-        }while(hora < 0);    
+        }    
 
-        let min = hora * 60;
-        let seg = min * 60;
+        const min = hora * 60;
+        const seg = min * 60;
 
         alert(`${hora} hora/s, tiene ${min} minutos y ${seg} segundos`);
     

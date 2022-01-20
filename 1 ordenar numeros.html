@@ -11,23 +11,31 @@
 
         //write a JavaScript conditional statement to sort three numbers. Display an alert box to show the result.
 
-let num1 = +prompt("elige el primer numero");
-let num2 = +prompt("elige el segundo numero");
-let num3 = +prompt("elige el tercer numero");
+        const num1 = Number(prompt("elige el primer numero"));
+        const num2 = Number(prompt("elige el segundo numero"));
+        const num3 = Number(prompt("elige el tercer numero"));
 
-if(num1 > num2 && num1 > num3 && num2 > num3){
-    alert(`Numeros de mayor a menor ${num1}, ${num2}, ${num3}`);
-} else if(num1 > num2 && num1 > num3 && num3 > num2){
-    alert(`Numeros de mayor a menor ${num1}, ${num3}, ${num2}`);
-} else if(num2 > num1 && num2 > num3 && num1 > num3){
-    alert(`Numeros de mayor a menor ${num2}, ${num1}, ${num3}`);
-}else if(num2 > num1 && num2 > num3 && num3 > num1){
-    alert(`Numeros de mayor a menor ${num2}, ${num3}, ${num1}`);
-}else if(num3 > num1 && num3 > num2 && num1 > num2){
-    alert(`Numeros de mayor a menor ${num3}, ${num1}, ${num2}`);
-} else{
-    alert(`Numeros de mayor a menor ${num3}, ${num2}, ${num1}`);
-}
+        if(num1 > num2 && num1 > num3){
+            if(num2 > num3) {
+                alert(`Numeros de mayor a menor ${num1}, ${num2}, ${num3}`);
+            }else{
+                alert(`Numeros de mayor a menor ${num1}, ${num3}, ${num2}`);
+            }
+        }
+        if(num2 > num1 && num2 > num3){
+            if(num1 > num3){
+                alert(`Numeros de mayor a menor ${num2}, ${num1}, ${num3}`);
+            }else {
+                alert(`Numeros de mayor a menor ${num2}, ${num3}, ${num1}`);
+            }
+        }
+        if(num3 > num1 && num3 > num2){
+            if(num1 > num2){
+                alert(`Numeros de mayor a menor ${num3}, ${num1}, ${num2}`);
+            }else {
+                alert(`Numeros de mayor a menor ${num3}, ${num2}, ${num1}`);
+            }
+        }    
 
 
     </script>

@@ -13,13 +13,13 @@
         234561
         345612 */
 
-        let number = prompt("Escriba un numero");
-        let arrNumber = number.split("");
+        const number = prompt("Escriba un numero");
+        const Numbers = number.split("");
 
-        arrNumber.forEach((e, ind, arr) => {
-            arr.push(arrNumber[0]);
-            arr.shift();
+        Numbers.forEach((e, ind, arr) => {
             console.log(arr.join(" - "));
+            arr.push(Numbers[0]);
+            arr.shift();
         });
 
     </script>

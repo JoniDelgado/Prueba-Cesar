@@ -66,7 +66,7 @@
         
         
         function validate(num, numran) {
-            if(num == numran){
+            if(num === numran){
                 alert("Haz ganado!!!");
                 startGame();
             }
@@ -77,7 +77,7 @@
         function substChances(val){
             val--;
             alert(`te quedan ${val} oportunidades`);
-            if(val == 0) {
+            if(!val) {
                 alert("HAZ PERDIDO LA PARTIDA");
                 startGame();
             }

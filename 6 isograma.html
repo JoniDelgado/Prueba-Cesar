@@ -25,23 +25,23 @@
             alert("Esta palabra no es un isograma");
         } */
 
-        let palabra = "conocer";
+        let palabra = "rupeltinsky";
         let arrPalabra = palabra.split("");
-        let letrasRepetidas = [];
+        let isIsogram = true;
 
+        search:
         for (let i = 0; i < arrPalabra.length; i++) {
             for (let j = i + 1; j < arrPalabra.length; j++) {
-                 if(arrPalabra[i] == arrPalabra[j]){
-                    letrasRepetidas.push(arrPalabra[j]);
+                 if(arrPalabra[i] === arrPalabra[j]){
+                     alert("No es un isograma, hay letras repetidas");
+                     isIsogram = false;
+                     break search;
                 }     
             }         
         }
-
-        if(letrasRepetidas.length == 0) {
-            alert("Es un isograma, no hay letras repetidas"); 
-        } else {
-            alert("No es un isograma, se repite la/s letra/s (" + letrasRepetidas + ")");
-        }
+        
+        if(isIsogram) {alert("Es un isograma, no hay letras repetidas");} 
+  
         
             
 

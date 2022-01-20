@@ -9,9 +9,9 @@
 <body>
     <script>
 
-        let num1 = +prompt("ingrese un numero");
-        let num2 = +prompt("ingrese un segundo numero");
-        let num3 = +prompt("ingrese un tercer numero");
+        const num1 = Number(prompt("ingrese un numero"));
+        const num2 = Number(prompt("ingrese un segundo numero"));
+        const num3 = Number(prompt("ingrese un tercer numero"));
 
         if(num3 > num1 && num3 < num2){
                 alert("El tercer numero " + num3 + " esta dentro del rango " + num1 + " y " + num2);

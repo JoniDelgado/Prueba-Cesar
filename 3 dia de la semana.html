@@ -11,11 +11,39 @@
 
         // Write a JavaScript program to return the weekday
 
-        let date = new Date();
+       /*  let date = new Date();
         let day = new Date(date).getDay();
         let weeDay = ["domingo", "lunes", "martes", "miercoles", "jueves", "viernes", "sabado"];
-        alert(`Hoy es ${weeDay[day]}`);
+        alert(`Hoy es ${weeDay[day]}`); */
 
+        //solucion sin utilizar array
+
+        const date = new Date();
+        const day = new Date(date).getDay();
+
+        switch (day) {
+            case 0:
+                alert(`Hoy es Domingo`);
+                break;
+            case 1:
+                alert(`Hoy es Lunes`);
+                break;            
+            case 2:
+                alert(`Hoy es Martes`);
+                break;            
+            case 3:
+                alert(`Hoy es Miercoles`);
+                break;            
+            case 4:
+                alert(`Hoy es Jueves`);
+                break;            
+            case 5:
+                alert(`Hoy es Viernes`);
+                break;            
+            default:
+                alert(`Hoy es Sabado`);
+                break;
+        }
 
     </script>
 </body>
