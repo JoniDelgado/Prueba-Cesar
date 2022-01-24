@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*     styles for left bar  */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#general-container {
+    width: 90%;
+    margin: auto;
+}
+
+#menu, #home, #news {
+    width: 35%;
+    float: left;
+}
+
+#menu {
+    width: 25%;
+}
+
+#menu-container {
+    margin-left: 3.5rem;
+    cursor: pointer;
+}
+
+#menu-container .slide-menu {
+    width: 80%;
+    padding: 1rem;
+    margin: .5rem 0;
+}
+
+#menu-container .slide-menu:hover {
+    border-radius: 30px;
+    background-color: #E7E7E8;
+}
+
+#menu-container .slide-menu h2 {
+    display: inline;
+    margin-left: .6rem;
+}
+
+#menu-container button, #home-buttons-bar button {
+    background-color: #55ADEE;
+    color: white;
+    font-size: 1.1rem;
+    width: 70%;
+    padding: .9rem;
+    border: none;
+    border-radius: 30px;
+}
+
+#menu-container button:hover {
+    background-color: #1A8CD8;
+    cursor: pointer;
+}
+
+#user-name {
+    margin: 1.5rem 0;
+}
+
+#user-name img {
+    float: left;
+}
+
+    /*styles for center bar */
+
+#home-space {
+    padding: .5rem 1rem;
+    border: .1px solid rgb(231, 231, 231);
+}
+
+#home-bar h2 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    float: left;
+}
+
+#home-bar i {
+    float: right;
+}
+
+#what-happening {
+    clear: both;
+    padding: 2rem 0;
+}
+
+#what-happening img {
+    float: left;
+}
+
+#home-buttons-bar {
+    text-align: center;
+    clear: both;
+    padding: 2rem 0;
+}
+
+#home-buttons-bar i {
+    margin-right: 1.3rem;
+}
+
+#home-buttons-bar button {
+    width: 22%;
+    padding: .5rem;
+    background-color: #55ADEE;
+    border-radius: 30px;
+}
+
+#home-posts {
+    height: 100vh;
+    border: .1px solid rgb(231, 231, 231);
+}
+
+#profile-image {
+    width: 10%;
+    padding: .5rem;
+    float: left;
+}
+
+#profile-image img {
+    border-radius: 50%;
+}
+
+#post {
+    margin-left: 1rem;
+    width: 85%;
+    padding: .5rem;
+    float: left;
+}
+
+#post div:first-child h1 {
+    float: left;
+    margin-right: .5rem;
+    font-size: 1rem;
+}
+
+#post-text {
+    clear: both;
+    margin: 1rem 0;
+}
+
+#post-image img {
+    border-radius: 5px;
+    width: 100%;
+}
+
+#post-image-buttons {
+    text-align: center;
+}
+
+#post-image-buttons i {
+    margin: .5rem 1.5rem;
+}
+
+#news {
+    padding: 1rem;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(241, 241, 241);
+    border-radius: 30px;
+}
+
+#what-happend {
+    margin-top: 2rem;
+    padding: .5rem;
+    height: 25rem;
+    background-color: rgb(241, 241, 241);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.what-happend-new {
+    margin: 1.8rem 0;
+}
+
+.what-happend-new p {
+    width: 70%;
+    float: left;
+}
+
+#show-more {
+    font-weight: bold;
+    font-size: .8rem;
+    color: #55ADEE;
+}
+
