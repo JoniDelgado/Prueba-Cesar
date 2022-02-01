@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var employeeId = 'abc123';
+
+        function foo() {
+            employeeId = '123bcd';
+            return;
+
+            function employeeId() {}
+        }
+
+        foo();
+        console.log(employeeId);
+
+        // Cual es el resultado?
+        // 1) undefined
+        // 2) '123bcd'
+        // 3) 'abc123'
+        // 4) ReferenceError: employeeId is no defined
+
+        //Resultado 2... porque al correr la funcion foo() se redefine la variable
+        //y luego sale de la funcion con el return.
+    </script>
+</body>
+
+</html>

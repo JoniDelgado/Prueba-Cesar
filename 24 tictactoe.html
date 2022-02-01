@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const player1 = [];
+        const player2 = [];
+        const numbers = [1, 2, 3,
+                         4, 5, 6,
+                         7, 8, 9
+        ];
+        const chckWinner = []
+       
+        function choosePlayer1() {
+            let num1 = Number(prompt("Jugador 1 elige un numero de los siguientes: " + numbers));
+            validation(player1, num1);
+        }
+
+        function choosePlayer2() {
+            let num2 = Number(prompt("Jugador 2 elige un numero de los siguientes: " + numbers));
+            validation(player2, num2);
+        }
+
+
+        function validation(player, number) {
+            if (numbers.includes(number)) {
+                player.push(number);
+
+                const index = numbers.indexOf(number);
+                numbers.splice(index,1);
+
+                if(gameOver()) return;
+
+                if(player === player1) choosePlayer2(); 
+                choosePlayer1();
+            } else {
+                alert("Has elegido un numero no valido.");
+            }
+        }
+
+        function gameOver() {
+            if(!numbers.length){
+                alert("JUEGO TERMINADO, es un empate");
+                return true;
+            }
+        }
+
+        choosePlayer1();
+    </script>
+</body>
+
+</html>

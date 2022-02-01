@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Empleado {
+
+            constructor(name, lastName, salary) {
+                this.name = name,
+                this.lastName = lastName,
+                this.salary = salary
+            }
+
+            salaryUp() {
+                return this.salary *= this.salary;
+            }
+
+            showEmployeeDetails() {
+                console.log(`Nombre de empelado: ${this.name}
+                            Apellido de empleado: ${this.lastName}
+                            Salario de empleado: ${this.salary}
+                            `);
+            }
+        }
+
+        const jonatan = new Empleado("jonatan", "delgado", 1200);
+
+
+
+    </script>
+</body>
+</html>
