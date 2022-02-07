@@ -14,11 +14,13 @@
         const player1 = "X";
         const player2 = "O";
         let currentPlayer;
+        let timesPlayed;
         let board = [];
 
     function newGame(){
         alert("Bienvenido al juego Tic Tac Toe... Comienza la partida!!!");
         currentPlayer = player1;
+        timesPlayed = 0;
         board = [
                         ["-", "-", "-"],
                         ["-", "-", "-"],
@@ -37,6 +39,7 @@
         board[boardInX][boardInY] = currentPlayer;
         checkWinner();
         changePlayer();
+        timesPlayed++;
         chooseBoard();
     };
 
@@ -50,6 +53,10 @@
     function checkWinner() {
             if(rawWins() || columnWins() || diagonalWins()) {
                 alert("Jugador: " + currentPlayer + " es el ganador de la partida");
+                return newGame();
+            }
+            if(timesPlayed === 8) {
+                alert("Es un empate... no hay ganador!!");
                 return newGame();
             }
     }
