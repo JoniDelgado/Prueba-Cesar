@@ -10,49 +10,110 @@
 
 <body>
     <script>
-        const player1 = [];
-        const player2 = [];
-        const numbers = [1, 2, 3,
-                         4, 5, 6,
-                         7, 8, 9
-        ];
-        const chckWinner = []
-       
-        function choosePlayer1() {
-            let num1 = Number(prompt("Jugador 1 elige un numero de los siguientes: " + numbers));
-            validation(player1, num1);
-        }
 
-        function choosePlayer2() {
-            let num2 = Number(prompt("Jugador 2 elige un numero de los siguientes: " + numbers));
-            validation(player2, num2);
-        }
+        const player1 = "X";
+        const player2 = "O";
+        let currentPlayer = player1;
+        const board = [
+                        ["-", "-", "-"],
+                        ["-", "-", "-"],
+                        ["-", "-", "-"]
+                        ];
 
+    chooseBoard:
+    function chooseBoard() {
+        const boardInX = Number(prompt(`Jugador ${currentPlayer} elija posicion de columna`));
+        const boardInY = Number(prompt(`Jugador ${currentPlayer} elija posicion de fila`));
+        validateNullEnter(boardInX, boardInY);
+        validateBoard(boardInX, boardInY);
+        validateRepeatedPosition(boardInX, boardInY);
+        board[boardInX][boardInY] = currentPlayer;
+        checkWinner();
+        changePlayer();
+        chooseBoard();
+    };
 
-        function validation(player, number) {
-            if (numbers.includes(number)) {
-                player.push(number);
+    function changePlayer() {
+        (currentPlayer === player1) ? currentPlayer = player2 : currentPlayer = player1;
+        return currentPlayer;
+    }
 
-                const index = numbers.indexOf(number);
-                numbers.splice(index,1);
+/*     chequeo si hay ganador en fila, columna o diagonal */
 
-                if(gameOver()) return;
-
-                if(player === player1) choosePlayer2(); 
-                choosePlayer1();
-            } else {
-                alert("Has elegido un numero no valido.");
+    function checkWinner() {
+            if(rawWins() || columnWins() || diagonalWins()) {
+                alert("Jugador: " + currentPlayer + " es el ganador de la partida");
             }
-        }
+    }
 
-        function gameOver() {
-            if(!numbers.length){
-                alert("JUEGO TERMINADO, es un empate");
-                return true;
+    function rawWins() {
+        let winner = false;
+        for (let col = 0; col < board.length; col++) {
+            for (let raw = 0; raw < board.length; raw++) {
+                if(board[col][0] === currentPlayer &&
+                   board[col][1] === currentPlayer &&
+                   board[col][2] === currentPlayer) {
+                       winner = true;
+                }
+            }           
+        }
+        return winner;
+    }
+
+    function columnWins() {
+        let winner = false;
+        for (let col = 0; col < board.length; col++) {
+            for (let raw = 0; raw < board.length; raw++) {
+                if(board[0][raw] === currentPlayer &&
+                   board[1][raw] === currentPlayer &&
+                   board[2][raw] === currentPlayer) {
+                       winner = true;
+                }
+            }           
+        }
+        return winner;
+    }
+
+    function diagonalWins() {
+        let winner = false;
+        if(board[1][1] === currentPlayer) {
+            if((board[0][0] === currentPlayer &&
+                board[2][2] === currentPlayer) ||
+                (board[0][2] === currentPlayer &&
+                 board[2][0]) === currentPlayer) {
+                     winner = true;
             }
-        }
+        }    
+        return winner;  
+    }
 
-        choosePlayer1();
+/*     Validaciones de ingresos en tablero */
+
+    function validateBoard(boardX, boardY) {
+        if((boardX < 0 || boardX > 2) ||
+            boardY < 0 || boardY > 2) {
+                alert("Posicion en el tablero no valida. Intente otra vez");
+                chooseBoard();
+            }
+    }
+
+    function validateRepeatedPosition(boardX, boardY) {
+        if( board[boardX][boardY] === player1 ||
+            board[boardX][boardY] === player2) {
+                alert("Posicion en el tablero ya elegida. Intente otra vez");
+                chooseBoard();
+            }
+    }
+
+    function validateNullEnter(boardX, boardY) {
+        if(isNaN(boardX) || isNaN(boardY)) {
+            alert("Juego cancelado. Gracias por jugar con nosotros");
+        }
+    }
+
+    chooseBoard();
+
+
     </script>
 </body>
 
