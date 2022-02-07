@@ -13,17 +13,24 @@
 
         const player1 = "X";
         const player2 = "O";
-        let currentPlayer = player1;
-        const board = [
+        let currentPlayer;
+        let board = [];
+
+    function newGame(){
+        alert("Bienvenido al juego Tic Tac Toe... Comienza la partida!!!");
+        currentPlayer = player1;
+        board = [
                         ["-", "-", "-"],
                         ["-", "-", "-"],
                         ["-", "-", "-"]
                         ];
 
-    chooseBoard:
+        chooseBoard();
+    }    
+    
     function chooseBoard() {
-        const boardInX = Number(prompt(`Jugador ${currentPlayer} elija posicion de columna`));
-        const boardInY = Number(prompt(`Jugador ${currentPlayer} elija posicion de fila`));
+        const boardInX = prompt(`Jugador ${currentPlayer} elija posicion de columna`);
+        const boardInY = prompt(`Jugador ${currentPlayer} elija posicion de fila`);
         validateNullEnter(boardInX, boardInY);
         validateBoard(boardInX, boardInY);
         validateRepeatedPosition(boardInX, boardInY);
@@ -43,6 +50,7 @@
     function checkWinner() {
             if(rawWins() || columnWins() || diagonalWins()) {
                 alert("Jugador: " + currentPlayer + " es el ganador de la partida");
+                return newGame();
             }
     }
 
@@ -106,13 +114,12 @@
     }
 
     function validateNullEnter(boardX, boardY) {
-        if(isNaN(boardX) || isNaN(boardY)) {
+        if(boardX === null || boardY === null) {
             alert("Juego cancelado. Gracias por jugar con nosotros");
         }
     }
 
-    chooseBoard();
-
+    newGame();
 
     </script>
 </body>
