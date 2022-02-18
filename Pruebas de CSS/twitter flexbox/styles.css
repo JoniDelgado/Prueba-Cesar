@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+#menu-container, #news-container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+#menu-container {
+    position: sticky;
+    top: 0;
+}
+
+#menu {
+    width: 80%;
+}
+
+#menu-container .section-menu {
+    padding: 10px;
+    font-size: 1.5rem;
+}
+
+.section-menu p {
+    display: inline;
+    margin-left: .5rem;
+}
+
+.button {
+    padding: 10px;
+    margin: 1.5rem 0 2.5rem 0;
+    width: 80%;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    background-color: #6C4DE6;
+
+}
+
+.profil-img {
+    border-radius: 50%;
+}
+
+#profil #profile-name {
+    display: inline-block;
+}
+
+/* Home section */
+
+#home {
+    width: 50%;
+}
+
+#home #home-section {
+    padding: 10px;
+    margin: auto;
+    width: 90%;
+}
+
+#home-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#what-happend-box {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+#what-happend-box img {
+    margin-right: 1rem;
+}
+
+#buttons-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#small-buttons i {
+    margin: 0 .3rem;
+    color: #7856FF;
+}
+
+#home-button {
+    width: 25%;
+    padding: 10px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    background-color: #6C4DE6;
+}
+
+#home-post {
+    margin-top: 3rem;
+    display: flex;
+    border-radius: 15px;
+    background-color: #F7F7F7;
+}
+
+#post {
+    padding: 2px;
+}
+
+.profil-name {
+    display: inline-block;
+}
+
+#post-image img{
+    margin-top: .3rem;
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* seccion news */
+
+#news-section{
+    padding: 10px 0;
+}
+
+
+#search-bar i, p {
+    display: inline-block;
+}
+
+#search-bar i {
+    margin-right: 1rem;
+}
+
+
+#search-bar {
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #EFF3F4;
+    color: #6c767c;
+}
+
+#news {
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #F7F9F9;
+}
+
+#news h2 {
+    margin-bottom: 1rem;
+}
+
+.news-box {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.news-box img {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#news #show-more {
+    color: #9a86f3;
+}
